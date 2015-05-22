@@ -1,2 +1,2 @@
-# ![bearicc.com](bearicc.com)
+# [bearicc.com](bearicc.com)
 
