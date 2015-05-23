@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.4/css/bootstrap.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/flickity-1.0.2.css' %}" type="text/css" media="screen"/>
@@ -10,62 +11,16 @@
     <title>BEAR's homepage</title>
 </head>
 <body>
-<!--
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
--->
-<canvas id="canvas" width="800px" height="600px">Canvas is not supported!</canvas>
-<!---------------------------------------------------------------->
-    <script id="shader-fs" type="x-shader/x-fragment">
-        precision mediump float;
-        varying vec3 vColor;
-        varying vec2 vTexcoord;
-        uniform sampler2D uSampler;
-        void main(void) {
-            gl_FragColor = mix(texture2D(uSampler, vTexcoord), vec4(vColor, 1.0), 0.5);
-        }
-    </script>
-
-    <script id="shader-vs" type="x-shader/x-vertex">
-        attribute vec3 aVertexPosition;
-        attribute vec3 aVertexColor;
-        attribute vec2 aVertexTex;
-        varying vec3 vColor;
-        varying vec2 vTexcoord;
-        uniform mat4 uMVMatrix;
-        uniform mat4 uPMatrix;
-
-        void main(void) {
-            gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
-            vColor = aVertexColor;
-            vTexcoord = aVertexTex;
-        }
-    </script>
+    <div id="WebGL"></div>
+    <div id="WebGL-Stats"></div>
+    
     <script src="{% static 'js/jquery-2.1.4.js' %}"></script>
     <script src="{% static 'bootstrap-3.3.4/js/bootstrap.js' %}"></script>
     <script src="{% static 'js/flickity-1.0.2.js' %}"></script>
     <script src="{% static 'js/glmatrix-2.2.1.js' %}"></script>
+    <script src="{% static 'js/three-r71.js' %}"></script>
+    <script src="{% static 'js/stats-r12.js' %}"></script>
+    <script src="{% static 'js/dat-gui.js' %}"></script> <!-- 05/23/15 -->
     <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>
